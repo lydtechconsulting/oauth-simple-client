@@ -5,9 +5,9 @@ import {AuthContext, AuthProvider, IAuthContext, TAuthConfig, TRefreshTokenExpir
 
 const authConfig: TAuthConfig = {
     clientId: 'lydtech-public-client',
-    authorizationEndpoint: 'http://localhost:8080/realms/lydtech/protocol/openid-connect/auth',
-    tokenEndpoint: 'http://localhost:8080/realms/lydtech/protocol/openid-connect/token',
-    redirectUri: 'http://localhost:3000/',
+    authorizationEndpoint: 'http://localhost:8084/oauth2/authorize',
+    tokenEndpoint: 'http://localhost:8084/oauth2/tokenuserinfo',
+    redirectUri: 'http://localhost:3000',
     scope: 'openid',
     onRefreshTokenExpire: (event: TRefreshTokenExpiredEvent) => window.confirm('Session expired. Refresh page to continue using the site?') && event.login(),
 }
